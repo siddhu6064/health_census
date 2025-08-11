@@ -1,55 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Health Analysis Data</title>
-  <link rel="stylesheet" href="./health_analysis.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Census - Modern Healthcare Analytics</title>
+    <link rel="stylesheet" href="./health_analysis.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-   <nav><h1>Health Analysis Census</h1>
-<ul>
-  <li><a href="./index.html" id="home">Home </a></li>
-  <li><a href="./health_contact.html" id="contact">Contact Us </a></li>
-  <li><input type="text" id="conditionInput" placeholder="Enter a health condition">  </li>
-  <li><button id='btnSearch'>Search</button>
-  </li>
-</ul>
-</nav>
-<div class="container">
-<div class="analysisForm">
-<h1>Healthcare Data Analysis</h1>
-<div>
-<label for="name">Name:</label>
-<input type="text" id="name">
-</div>
-<div>
-<label>Gender:</label>
-<label for="male">Male</label>
-<input type="radio" name="gender" id="male" value="Male">
-<label for="female">Female</label>
-<input type="radio" name="gender" id="female" value="Female">
-</div>
-<div>
-<label for="age">Age:</label>
-<input type="number" id="age">
-</div>
-<div>
-<label for="condition">Condition:</label>
-<select id="condition">
-  <option value="">Select condition</option>
-  <option value="Diabetes">Diabetes</option>
-  <option value="Thyroid">Thyroid</option>
-  <option value="High Blood Pressure">High Blood Pressure</option>
-</select>
-</div>
-<button id="addPatient">Add Patient</button>
-<h2>Analysis Report</h2>
-<div id="report"></div>
-</div>
-<div class="searchCondition">
-    <div id="result"></div>
-</div>
-</div>
-<script src="./health_analysis.js"></script>
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🏥</span>
+                <span class="logo-text">Health Census Analytics</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./index.html" class="nav-link active">Home</a></li>
+                <li><a href="./health_contact.html" class="nav-link">Contact Us</a></li>
+                <li>
+                    <div class="search-container">
+                        <input type="text" id="conditionInput" placeholder="Search conditions...">
+                        <button class="search-btn" id="btnSearch">
+                            <span class="search-icon">🔍</span>
+                            Search
+                        </button>
+                    </div>
+                </li>
+            </ul>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="./index.html" class="mobile-nav-link active">Home</a>
+        <a href="./health_contact.html" class="mobile-nav-link">Contact Us</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1 class="hero-title">Healthcare Data Analytics Platform</h1>
+            <p class="hero-subtitle">Track, analyze, and visualize patient health data with modern insights</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number" id="livePatientCount">0</span>
+                    <span class="hero-stat-label">Patients Tracked</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number" id="liveConditionCount">3</span>
+                    <span class="hero-stat-label">Conditions Monitored</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">24/7</span>
+                    <span class="hero-stat-label">Available Support</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Grid -->
+        <div class="dashboard-grid">
+            <!-- Patient Registration Form -->
+            <div class="glass-card form-section animate-on-scroll">
+                <div class="card-header">
+                    <h2><span class="icon">📋</span> Patient Registration</h2>
+                    <span class="badge badge-primary">New</span>
+                </div>
+                
+                <form id="patientForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">
+                            <span class="label-text">Patient Name</span>
+                            <span class="required">*</span>
+                        </label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">👤</span>
+                            <input type="text" id="name" class="form-control" placeholder="Enter patient name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            <span class="label-text">Gender</span>
+                            <span class="required">*</span>
+                        </label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" name="gender" id="male" value="Male" required>
+                                <label for="male" class="radio-label">
+                                    <span class="radio-icon">👨</span>
+                                    <span>Male</span>
+                                </label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" name="gender" id="female" value="Female" required>
+                                <label for="female" class="radio-label">
+                                    <span class="radio-icon">👩</span>
+                                    <span>Female</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age" class="form-label">
+                            <span class="label-text">Age</span>
+                            <span class="required">*</span>
+                        </label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🎂</span>
+                            <input type="number" id="age" class="form-control" placeholder="Enter age" min="1" max="120" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="condition" class="form-label">
+                            <span class="label-text">Medical Condition</span>
+                            <span class="required">*</span>
+                        </label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🏥</span>
+                            <select id="condition" class="form-control" required>
+                                <option value="">Select a condition</option>
+                                <option value="Diabetes">🩸 Diabetes</option>
+                                <option value="Thyroid">🦴 Thyroid</option>
+                                <option value="High Blood Pressure">❤️ High Blood Pressure</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-block" id="addPatient">
+                        <span class="btn-icon">➕</span>
+                        Add Patient Record
+                    </button>
+                </form>
+            </div>
+
+            <!-- Analytics Dashboard -->
+            <div class="glass-card analytics-section animate-on-scroll">
+                <div class="card-header">
+                    <h2><span class="icon">📊</span> Analytics Dashboard</h2>
+                    <div class="refresh-btn" onclick="refreshStats()">
+                        <span class="refresh-icon">🔄</span>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card stat-card-primary">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="totalPatients">0</div>
+                            <div class="stat-label">Total Patients</div>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-card-success">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="avgAge">0</div>
+                            <div class="stat-label">Average Age</div>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-card-info">
+                        <div class="stat-icon">⚕️</div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="conditionCount">0</div>
+                            <div class="stat-label">Conditions</div>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-card-warning">
+                        <div class="stat-icon">📅</div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="todayCount">0</div>
+                            <div class="stat-label">Today's Entries</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart Container -->
+                <div class="chart-container">
+                    <canvas id="conditionChart"></canvas>
+                </div>
+
+                <!-- Detailed Report -->
+                <div class="report-section">
+                    <h3><span class="icon">📑</span> Detailed Analysis Report</h3>
+                    <div id="report" class="report-content">
+                        <div class="empty-state">
+                            <span class="empty-icon">📊</span>
+                            <p>No patient data available yet</p>
+                            <small>Add patients to see detailed analytics</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Results Section -->
+        <div id="searchResultsSection" class="search-results-container" style="display: none;">
+            <div class="glass-card search-results animate-on-scroll">
+                <button class="close-btn" onclick="closeSearchResults()">✕</button>
+                <div id="result"></div>
+            </div>
+        </div>
+
+        <!-- Recent Patients Table -->
+        <div class="glass-card table-section animate-on-scroll" id="recentPatientsSection" style="display: none;">
+            <div class="card-header">
+                <h2><span class="icon">📋</span> Recent Patient Records</h2>
+                <button class="btn btn-sm btn-secondary" onclick="exportData()">
+                    <span class="btn-icon">📥</span> Export
+                </button>
+            </div>
+            <div class="table-responsive">
+                <table class="data-table" id="patientsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Age</th>
+                            <th>Condition</th>
+                            <th>Date Added</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="patientsTableBody">
+                        <!-- Dynamic content -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <span class="toast-icon" id="toastIcon">✓</span>
+        <span id="toastMessage"></span>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Include Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Main JavaScript -->
+    <script src="./health_analysis.js"></script>
 </body>
 </html>
