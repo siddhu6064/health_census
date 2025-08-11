@@ -1,56 +1,210 @@
 {
     "conditions": [
-      {
-        "name": "Thyroid",
-        "imagesrc":"thyroid.jpg",
-        "symptoms": [
-          "Fatigue",
-          "Weight gain or loss",
-          "Dry skin",
-          "Muscle weakness",
-          "Irregular menstrual periods"
-        ],
-        "prevention": [
-          "Eat a balanced diet",
-          "Exercise regularly",
-          "Get regular check-ups"
-        ],
-        "treatment": "Medication like levothyroxine may be prescribed by a doctor."
-      },
-      {
-        "name": "Diabetes",
-        "imagesrc":"diabeties.jpg",
-        "symptoms": [
-          "Frequent urination",
-          "Increased thirst",
-          "Blurry vision",
-          "Fatigue",
-          "Slow healing of cuts or sores"
-        ],
-        "prevention": [
-          "Maintain a healthy weight",
-          "Follow a balanced diet",
-          "Regular exercise"
-        ],
-        "treatment": "Management includes medication, insulin therapy, and lifestyle changes."
-      },
-      {
-        "name": "High Blood Pressure",
-        "imagesrc":"blood_pressure.jpg",
-        "symptoms": [
-          "Headaches",
-          "Shortness of breath",
-          "Chest pain",
-          "Dizziness",
-          "Blurred or double vision"
-        ],
-        "prevention": [
-          "Reduce salt intake",
-          "Exercise regularly",
-          "Maintain a healthy weight"
-        ],
-        "treatment": "Medications like ACE inhibitors or diuretics may be prescribed."
-      }
-    ]
-  }
-  
+        {
+            "id": 1,
+            "name": "Diabetes",
+            "category": "Metabolic",
+            "severity": "chronic",
+            "imagesrc": "diabetes.jpg",
+            "icon": "🩸",
+            "color": "#f56565",
+            "description": "A group of metabolic disorders characterized by high blood sugar levels over a prolonged period.",
+            "symptoms": [
+                "Frequent urination",
+                "Increased thirst",
+                "Blurry vision",
+                "Fatigue",
+                "Slow healing of cuts or sores",
+                "Unexplained weight loss",
+                "Tingling in hands or feet",
+                "Dry skin",
+                "Increased hunger"
+            ],
+            "prevention": [
+                "Maintain a healthy weight",
+                "Follow a balanced diet",
+                "Regular exercise (30 minutes daily)",
+                "Avoid smoking",
+                "Limit alcohol consumption",
+                "Regular health check-ups",
+                "Monitor blood sugar levels",
+                "Manage stress effectively",
+                "Get adequate sleep"
+            ],
+            "treatment": "Management includes medication (metformin, insulin therapy), lifestyle changes, regular monitoring of blood glucose levels, and dietary modifications. Work closely with healthcare providers for personalized treatment plans.",
+            "riskFactors": [
+                "Family history",
+                "Obesity",
+                "Physical inactivity",
+                "Age over 45",
+                "High blood pressure",
+                "Abnormal cholesterol levels"
+            ],
+            "complications": [
+                "Heart disease",
+                "Kidney damage",
+                "Eye damage",
+                "Nerve damage",
+                "Foot problems",
+                "Skin conditions"
+            ],
+            "statistics": {
+                "prevalence": "10.5% of US population",
+                "affectedGlobally": "537 million adults",
+                "mortalityRate": "1.5 million deaths annually"
+            }
+        },
+        {
+            "id": 2,
+            "name": "Thyroid",
+            "category": "Endocrine",
+            "severity": "manageable",
+            "imagesrc": "thyroid.jpg",
+            "icon": "🦴",
+            "color": "#667eea",
+            "description": "Disorders affecting the thyroid gland, which regulates metabolism, energy, and growth.",
+            "symptoms": [
+                "Fatigue",
+                "Weight gain or loss",
+                "Dry skin",
+                "Muscle weakness",
+                "Irregular menstrual periods",
+                "Hair loss",
+                "Mood changes",
+                "Sensitivity to cold or heat",
+                "Constipation or diarrhea",
+                "Neck swelling"
+            ],
+            "prevention": [
+                "Eat a balanced diet with adequate iodine",
+                "Exercise regularly",
+                "Get regular check-ups",
+                "Avoid radiation exposure",
+                "Manage stress levels",
+                "Maintain healthy weight",
+                "Limit soy intake",
+                "Avoid smoking",
+                "Take selenium supplements if recommended"
+            ],
+            "treatment": "Medication like levothyroxine for hypothyroidism or antithyroid drugs for hyperthyroidism. Regular monitoring of TSH levels, possible radioactive iodine therapy or surgery in severe cases.",
+            "riskFactors": [
+                "Female gender",
+                "Age over 60",
+                "Family history",
+                "Autoimmune diseases",
+                "Radiation exposure",
+                "Pregnancy"
+            ],
+            "complications": [
+                "Heart problems",
+                "Osteoporosis",
+                "Infertility",
+                "Mental health issues",
+                "Myxedema coma",
+                "Thyroid storm"
+            ],
+            "statistics": {
+                "prevalence": "5% of US population",
+                "womenAffected": "5-8 times more than men",
+                "undiagnosed": "60% remain undiagnosed"
+            }
+        },
+        {
+            "id": 3,
+            "name": "High Blood Pressure",
+            "category": "Cardiovascular",
+            "severity": "serious",
+            "imagesrc": "blood_pressure.jpg",
+            "icon": "❤️",
+            "color": "#48bb78",
+            "description": "A condition where blood force against artery walls is consistently too high, increasing risk of heart disease and stroke.",
+            "symptoms": [
+                "Headaches",
+                "Shortness of breath",
+                "Chest pain",
+                "Dizziness",
+                "Blurred or double vision",
+                "Nosebleeds",
+                "Heart palpitations",
+                "Nausea",
+                "Anxiety",
+                "Fatigue"
+            ],
+            "prevention": [
+                "Reduce salt intake (less than 2,300mg daily)",
+                "Exercise regularly (150 minutes weekly)",
+                "Maintain a healthy weight",
+                "Limit alcohol consumption",
+                "Quit smoking",
+                "Manage stress",
+                "Eat potassium-rich foods",
+                "Limit caffeine",
+                "Get quality sleep",
+                "Regular blood pressure monitoring"
+            ],
+            "treatment": "Medications like ACE inhibitors, diuretics, beta-blockers, or calcium channel blockers. Lifestyle modifications including DASH diet, weight loss, stress management, and regular exercise. Regular monitoring and medication adjustments as needed.",
+            "riskFactors": [
+                "Age",
+                "Race (African Americans at higher risk)",
+                "Family history",
+                "Obesity",
+                "Physical inactivity",
+                "High sodium diet",
+                "Chronic stress",
+                "Sleep apnea"
+            ],
+            "complications": [
+                "Heart attack",
+                "Stroke",
+                "Heart failure",
+                "Kidney disease",
+                "Vision loss",
+                "Metabolic syndrome",
+                "Dementia"
+            ],
+            "statistics": {
+                "prevalence": "47% of US adults",
+                "controlRate": "Only 24% have it under control",
+                "silentKiller": "Often no symptoms until serious damage"
+            }
+        }
+    ],
+    "healthTips": [
+        {
+            "category": "General",
+            "tips": [
+                "Drink 8 glasses of water daily",
+                "Get 7-9 hours of sleep",
+                "Practice mindfulness or meditation",
+                "Maintain social connections",
+                "Schedule regular health check-ups"
+            ]
+        },
+        {
+            "category": "Diet",
+            "tips": [
+                "Eat more fruits and vegetables",
+                "Choose whole grains over refined",
+                "Limit processed foods",
+                "Control portion sizes",
+                "Read nutrition labels"
+            ]
+        },
+        {
+            "category": "Exercise",
+            "tips": [
+                "Aim for 10,000 steps daily",
+                "Include strength training twice weekly",
+                "Stretch regularly",
+                "Take breaks from sitting",
+                "Find activities you enjoy"
+            ]
+        }
+    ],
+    "emergencyContacts": {
+        "emergency": "911",
+        "poisonControl": "1-800-222-1222",
+        "suicidePrevention": "988",
+        "healthHotline": "1-800-CDC-INFO"
+    }
+}
