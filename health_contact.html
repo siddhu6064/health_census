@@ -1,71 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Contact Us</title>
-  <link rel="stylesheet" href="./health_analysis.css">
-  <style>
-    body{
-        text-align: center;
-    }
-    /* Some basic styling for demonstration purposes */
-    #contactForm {
-      max-width: 400px;
-      margin: 0 auto;
-    }
-    #contactForm input,
-    #contactForm textarea {
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 8px;
-    }
-    #contactForm button {
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    #contactForm button:hover {
-      background-color: #0056b3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Health Census</title>
+    <link rel="stylesheet" href="./health_analysis.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav><h1>Health Analysis Census</h1>
-    <ul>
-      <li><a href="./index.html" id="home">Home </a></li>
-      <li><a href="./health_contact.html" id="contact">Contact Us </a></li>
-      </li>
-
-    </ul>
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🏥</span>
+                <span class="logo-text">Health Census Analytics</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="./index.html" class="nav-link">Home</a></li>
+                <li><a href="./health_contact.html" class="nav-link active">Contact Us</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
-  <h1>Contact Us</h1>
-  <p>Feel free to contact us to know more about your conditions and for treatment methods.</p>
 
-  <form id="contactForm">
-    <div>
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="./index.html" class="mobile-nav-link">Home</a>
+        <a href="./health_contact.html" class="mobile-nav-link active">Contact Us</a>
     </div>
-    <div>
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+
+    <!-- Contact Container -->
+    <div class="contact-container">
+        <div class="contact-form glass-card animate-on-scroll">
+            <div class="contact-header">
+                <h1>Get in Touch</h1>
+                <p style="color: var(--text-secondary);">We're here to help with your health concerns and treatment inquiries</p>
+            </div>
+
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="contactName" class="form-label">
+                        <span class="label-text">Your Name</span>
+                        <span class="required">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">👤</span>
+                        <input type="text" id="contactName" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        <span class="label-text">Email Address</span>
+                        <span class="required">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">📧</span>
+                        <input type="email" id="email" class="form-control" placeholder="your.email@example.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactCondition" class="form-label">
+                        <span class="label-text">Medical Condition</span>
+                        <span class="required">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">🏥</span>
+                        <input type="text" id="contactCondition" class="form-control" placeholder="Describe your condition" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message" class="form-label">
+                        <span class="label-text">Your Message</span>
+                        <span class="required">*</span>
+                    </label>
+                    <div class="input-wrapper">
+                        <span class="input-icon" style="align-self: flex-start; margin-top: 0.8rem;">💬</span>
+                        <textarea id="message" class="form-control" placeholder="Tell us more about your health concerns..." rows="5" required></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    <span class="btn-icon">📨</span>
+                    Send Message
+                </button>
+            </form>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <span class="contact-info-icon">📞</span>
+                    <div class="contact-info-title">Phone</div>
+                    <div class="contact-info-text">+1 (555) 123-4567</div>
+                </div>
+                <div class="contact-info-item">
+                    <span class="contact-info-icon">📧</span>
+                    <div class="contact-info-title">Email</div>
+                    <div class="contact-info-text">health@census.com</div>
+                </div>
+                <div class="contact-info-item">
+                    <span class="contact-info-icon">📍</span>
+                    <div class="contact-info-title">Location</div>
+                    <div class="contact-info-text">New York, NY</div>
+                </div>
+                <div class="contact-info-item">
+                    <span class="contact-info-icon">⏰</span>
+                    <div class="contact-info-title">Hours</div>
+                    <div class="contact-info-text">24/7 Support</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="glass-card animate-on-scroll" style="margin-top: 2rem;">
+            <h2 style="margin-bottom: 1.5rem; text-align: center;">
+                <span class="icon">❓</span> Frequently Asked Questions
+            </h2>
+            
+            <div class="faq-item">
+                <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">How do I track my health condition?</h3>
+                <p style="color: var(--text-secondary);">You can register as a patient on our home page and select your condition from the available options. Our system will track and analyze your data over time.</p>
+            </div>
+            
+            <div class="faq-item" style="margin-top: 1.5rem;">
+                <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Is my health data secure?</h3>
+                <p style="color: var(--text-secondary);">Yes, we take data security seriously. All patient information is encrypted and stored securely following healthcare industry standards.</p>
+            </div>
+            
+            <div class="faq-item" style="margin-top: 1.5rem;">
+                <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Can I export my health records?</h3>
+                <p style="color: var(--text-secondary);">Yes, you can export your health records in CSV format from the dashboard. Click the Export button in the Recent Patient Records section.</p>
+            </div>
+            
+            <div class="faq-item" style="margin-top: 1.5rem;">
+                <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">How quickly will I receive a response?</h3>
+                <p style="color: var(--text-secondary);">We aim to respond to all inquiries within 24 hours. For urgent matters, please call our support hotline.</p>
+            </div>
+        </div>
     </div>
-    <div>
-      <label for="condition">Condition</label>
-      <input type="text" id="condition" name="condition" required>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <span class="toast-icon" id="toastIcon">✓</span>
+        <span id="toastMessage"></span>
     </div>
-    <div>
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="spinner"></div>
     </div>
-    <button type="submit" onclick="thankyou()">Submit</button>
-  </form>
-  <script>
-    function thankyou(){
-        alert('Thank you for contacting us!')
-    }
-  </script>
+
+    <!-- JavaScript -->
+    <script src="./health_analysis.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        if (mobileMenuToggle && mobileNav) {
+            mobileMenuToggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+            });
+        }
+    </script>
 </body>
 </html>
